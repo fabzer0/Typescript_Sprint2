@@ -5,10 +5,18 @@ class Task {
     this.done = true;
   }
 }
+class HomeTask extends Task {}
 
 var tasks: Task[] = [];
-tasks.push(new Task("Do the dishes.", "high"));
-tasks.push(new Task("Buy chocolate.", "low"));
-tasks.push(new Task("Wash the laundry.", "high"));
-tasks[0].markDone();
+tasks.push(new HomeTask("Do the dishes.", "high"));
+tasks.push(new HomeTask("Buy chocolate.", "low"));
+tasks.push(new HomeTask("Wash the laundry.", "high"));
+tasks[0].markDone(); //mark the first task as done.
 console.log(tasks);
+
+
+class HobbyTask extends Task {
+  constructor(public description: string) {
+    super(description, "low");
+  }
+}
